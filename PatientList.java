@@ -15,23 +15,60 @@ public class PatientList {
 
 
     public void addPatient(Patient p){
-        // Empty for now
+        Node newNode = new Node(p);
+        if(head == null){
+            head = newNode;
+        } else {
+            Node current = head;
+            while(current.next != null){
+                current = current.next;
+            }
+            current.next = newNode; 
+        }
     }
 
-    public Patient removPatient(){
-        return null; // Empty for now
+    public Patient removPatient(int id){
+        if(head == null){
+            return null;
+        }
+        if(head.patient.id == id){
+            Patient removedPatient = head.patient; //Store the removed patient
+            head = head.next;
+            return removedPatient;
+        }
+        Node current = head;
+        while(current.next !=null){
+            if(current.next.patient.id == id){
+                Patient removedPatient = current.next.patient;
+                current.next = current.next.next; // Bypass the removed node
+                return removedPatient;
+            }
+            current = current.next;
+        }
+
+        return null; // Patient not found
     }
 
     public Patient findPatient(int id){
-        return null; // Empty for now
+        Node current = head;
+        while(current !=null){
+            if(current.patient.id ==id){
+                return current.patient; // Patient found
+            }
+            current = current.next;
+        }
+        return null; // Patient not found
     }
 
     public void printList() {
     Node current = head;
+
+    System.out.println("Patient List:");
     while (current != null) {
         System.out.println(current.patient); 
         current = current.next;
     }
+    System.out.println("--------------------");
 }
 
 
