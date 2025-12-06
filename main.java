@@ -1,8 +1,8 @@
 
 public class main {
     public static void main(String[] args) {
-
-      PatientList patientList = new PatientList();
+            //Task 1 testing
+      /*PatientList patientList = new PatientList();
 
 
       System.out.println("Adding 5 patients to the test list.");
@@ -36,6 +36,39 @@ public class main {
 
         System.out.println("Final Patient List:");
         patientList.printList();
+        */
+
+        // Task 2 testing
+        System.out.println("Treatment Queue Testing:");
+        TreatmentQueue queue = new TreatmentQueue();
+        // Adding 8 treatment requests
+        System.out.println("Enqueuing 8 treatment requests.");
+        for (int i = 1; i <= 8; i++) {
+            int pid = 200 + i;
+            System.out.println("Adding Patient ID: " + pid);
+            queue.enqueue(new TreatmentRequest(pid, System.currentTimeMillis())); 
+        }
+        System.out.println("Queue size:" + queue.size());
+        queue.printQueue();
+
+        // Dequeueing 3 treatment requests
+        System.out.println("Dequeuing 3 treatment requests.");
+        for (int i = 0; i < 3; i++) {
+            TreatmentRequest tr = queue.dequeue();
+            if (tr != null) {
+                System.out.println("Dequeued: " + tr);
+            } else {
+                System.out.println("The treatment queue is empty.");
+            }
+        }
+        //print final queue state
+        System.out.println("Final Queue State:");
+        queue.printQueue();
+        System.out.println("Final Queue Size: " + queue.size());
+
+
+        
+
        
 
 
