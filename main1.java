@@ -1,5 +1,5 @@
 
-public class main {
+public class main1 {
     public static void main(String[] args) {
             //Task 1 testing
       /*PatientList patientList = new PatientList();
@@ -65,6 +65,39 @@ public class main {
         System.out.println("Final Queue State:");
         queue.printQueue();
         System.out.println("Final Queue Size: " + queue.size());
+
+
+        //Task 3 testing
+        System.out.println("Task 3 testing");
+        DischargeStack stack = new DischargeStack();
+        // Pushing 5 discharged patients
+        System.out.println("Pushing 5 discharged patients onto the stack.");
+        for (int i = 1; i <= 5; i++) {
+            int pid = 300 + i;
+            System.out.println("Discharging Patient ID: " + pid);
+            stack.push(new DischargeRecord(pid, i));
+        }
+
+
+        stack.printStack();
+
+        //Popping 2 discharged patients
+        System.out.println("Popping 2 discharged patients from the stack.");
+        for (int i = 0; i < 2; i++) {
+            DischargeRecord dr = stack.pop();
+            if (dr != null) {
+                System.out.println("Popped: " + dr);
+            } else {
+                System.out.println("The discharge stack is empty.");
+            }
+        }
+
+        //print final stack state
+        System.out.println("Final Stack State:");
+        stack.printStack();
+        
+
+        
 
 
         
