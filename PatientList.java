@@ -73,6 +73,34 @@ public class PatientList {
 
 
 
+//Task 4
+
+public void sortBySeverity(){
+    if(head == null || head.next == null){
+        return; // List is empty or has only one patient
+    }
+    boolean swapped;
+    Node current;
+    do {    
+        swapped = false;
+        current = head;
+        while(current.next != null){
+            if(current.patient.severity < current.next.patient.severity){
+                // Swap patients
+                Patient temp = current.patient;
+                current.patient = current.next.patient;
+                current.next.patient = temp;
+                swapped = true;
+            }
+            current = current.next;
+        }
+    } while(swapped);   // Repeat until no swaps occur
+
+}
+
+
+
+
 
     
 
