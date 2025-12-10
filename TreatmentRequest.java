@@ -5,8 +5,13 @@ public class TreatmentRequest {
 
     public TreatmentRequest(int patientId, long arrivalTime, boolean isPriority) {
         this.patientId = patientId;
-        this.arrivalTime = System.currentTimeMillis();
+        this.arrivalTime = arrivalTime;
         this.isPriority = isPriority;
+    }
+
+    // Convenience constructor for non-priority requests
+    public TreatmentRequest(int patientId, long arrivalTime) {
+        this(patientId, arrivalTime, false);
     }
     // toString method to display the request details
     @Override

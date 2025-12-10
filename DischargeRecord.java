@@ -6,6 +6,12 @@ public class DischargeRecord {
     this.patientId = patientId;
     this.dischargeTime = dischargeTime;
   }
+
+  // Convenience constructor: use current time when only patientId provided
+  public DischargeRecord(int patientId) {
+    this.patientId = patientId;
+    this.dischargeTime = System.currentTimeMillis();
+  }
   // toString method to display the discharge record details
   @Override
   public String toString() {

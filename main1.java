@@ -46,7 +46,7 @@ public class main1 {
         for (int i = 1; i <= 8; i++) {
             int pid = 200 + i;
             System.out.println("Adding Patient ID: " + pid);
-            queue.enqueue(new TreatmentRequest(pid, System.currentTimeMillis())); 
+            queue.enqueue(new TreatmentRequest(pid, System.currentTimeMillis(),false)); 
         }
         System.out.println("Queue size:" + queue.size());
         queue.printQueue();
