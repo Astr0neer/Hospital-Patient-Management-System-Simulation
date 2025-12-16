@@ -27,7 +27,7 @@ public class PatientList {
         }
     }
 
-    public Patient removPatient(int id){
+    public Patient removePatient(int id){
         if(head == null){
             return null;
         }
