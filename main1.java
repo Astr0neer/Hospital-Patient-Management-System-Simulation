@@ -2,7 +2,7 @@
 public class main1 {
     public static void main(String[] args) {
             //Task 1 testing
-      /*PatientList patientList = new PatientList();
+       PatientList patientList = new PatientList();
 
 
       System.out.println("Adding 5 patients to the test list.");
@@ -13,10 +13,10 @@ public class main1 {
         patientList.addPatient(new Patient(104, "Naz Tekin", 9, 65)); // Severe case
         patientList.addPatient(new Patient(105, "John Cena", 5, 22));
 
-        patientList.printList(); //" Print all patients in the list."
+        patientList.printList(); 
 
         System.out.println("Removing by id 102");
-        Patient patientremoved = patientList.removPatient(102);
+        Patient patientremoved = patientList.removePatient(102);
         if(patientremoved != null){
             System.out.println("Removed Patient: " + patientremoved);
         } else {
@@ -36,7 +36,7 @@ public class main1 {
 
         System.out.println("Final Patient List:");
         patientList.printList();
-        */
+        
 
         // Task 2 testing
         System.out.println("Treatment Queue Testing:");
