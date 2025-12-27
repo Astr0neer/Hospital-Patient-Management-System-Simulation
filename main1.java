@@ -7,10 +7,10 @@ public class main1 {
 
       System.out.println("Adding 5 patients to the test list.");
 
-        patientList.addPatient(new Patient(101, "Ece Yilmaz", 3, 25));
-        patientList.addPatient(new Patient(102, "Ayse Demir", 7, 40));
-        patientList.addPatient(new Patient(103, "Mehmet Özer", 1, 30));
-        patientList.addPatient(new Patient(104, "Naz Tekin", 9, 65)); // Severe case
+        patientList.addPatient(new Patient(101, "Mr Beast", 3, 25));
+        patientList.addPatient(new Patient(102, "Steve Rogers", 7, 40));
+        patientList.addPatient(new Patient(103, "Erling Haaland", 1, 30));
+        patientList.addPatient(new Patient(104, "Leonel Messi", 9, 65)); // Severe case
         patientList.addPatient(new Patient(105, "John Cena", 5, 22));
 
         patientList.printList(); 

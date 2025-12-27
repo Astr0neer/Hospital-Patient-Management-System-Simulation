@@ -2,7 +2,7 @@ public class DischargeStack {
   private Node top;
 
 
-  // Inner class
+  // Inner node class in discharge stack
   private class Node {
     DischargeRecord data;
     Node next;
@@ -13,16 +13,20 @@ public class DischargeStack {
     }
   }
 
+
+
   // Push method to add a discharge record to the stack
-  public void push(DischargeRecord record) {
+  public void push(DischargeRecord record){
     Node newNode = new Node(record);
+
     newNode.next = top;
+
     top = newNode;
 
   }
 
   // pop method to remove and return the top discharge record from the stack
-  public DischargeRecord pop() {
+  public DischargeRecord pop(){
     if(top ==null){
       return null; // Stack is empty
     }
@@ -33,7 +37,7 @@ public class DischargeStack {
     }
 
     // Peek method to view the top discharge record without removing it
-    public DischargeRecord peek() {
+    public DischargeRecord peek(){
       if(top == null){
         return null; // Stack is empty
       }
@@ -60,8 +64,6 @@ public class DischargeStack {
       return top == null;
       
     }
-
-
 
 
 

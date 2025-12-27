@@ -5,14 +5,14 @@ public class HospitalTest {
 
         // Adding 10 patients
         System.out.println("Adding 10 patients to the system:");
-        hospital.addNewPatient(101, "Ali Yilmaz", 3, 30);
-        hospital.addNewPatient(102, "Ayse Demir", 8, 45); //Priorty
+        hospital.addNewPatient(101, "Natalie Portmen", 3, 30);
+        hospital.addNewPatient(102, "Chris Hemsworth", 8, 45); //Priorty
         hospital.addNewPatient(103, "Peter Parker", 2, 25);
         hospital.addNewPatient(104, "Super Mario", 9, 70); // Critical
-        hospital.addNewPatient(105, "Mehmet Oz", 4, 35);
-        hospital.addNewPatient(106, "Zeynep Su", 7, 28);
+        hospital.addNewPatient(105, "Aleyna Tilki", 4, 35);
+        hospital.addNewPatient(106, "Timothe Tchalamet", 7, 28);
         hospital.addNewPatient(107, "Sponge Bob", 1, 33);
-        hospital.addNewPatient(108, "Elif Polat", 10, 80); // Very Critical
+        hospital.addNewPatient(108, "Kendall Jenner", 10, 30); // Very Critical
         hospital.addNewPatient(109, "Burak Yilmaz", 5, 36);
         hospital.addNewPatient(110, "Kim Kardashian", 6, 55);
 
