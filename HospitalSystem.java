@@ -1,15 +1,24 @@
 import java.util.HashMap;
 
-public class HospitalSystem {
-    
+
+
+
+
+
+public class HospitalSystem{
+
+
+
+
+    // attributes
     PatientList patientList;
     TreatmentQueue normalQueue;
     TreatmentQueue urgentQueue; 
     DischargeStack dischargeStack;
-    HashMap<Integer, Patient> patientMap; // Map for quick patient lookup by ID
+    HashMap<Integer, Patient> patientMap; //To store the patients in a HashMap, for quick lookup
 
-
-    public HospitalSystem() {
+    //constructor
+    public HospitalSystem(){
         this.patientList = new PatientList();
         this.normalQueue = new TreatmentQueue();
         this.urgentQueue = new TreatmentQueue();
@@ -18,55 +27,59 @@ public class HospitalSystem {
     }
 
 
-    // Adding patient
-    public void addNewPatient(int id, String name, int severity, int age) {
+    // adding a new patient 
+    public void addNewPatient(int id, String name, int severity, int age){
         Patient newPatient = new Patient(id, name, severity, age);
         patientList.addPatient(newPatient);
-        patientMap.put(id, newPatient); // Add to map for quick lookup
+        patientMap.put(id, newPatient); // Keep in map for fast reference ratio
         System.out.println("Registered: " + name + " (ID: " + id + ", Severity: " + severity + ")");
 
 
     }
-    // Adding treatment request
-    public void addTreatmentRequest(int patientId, boolean isPriority) {
-        if (!patientMap.containsKey(patientId)) {
+
+
+    // Adding treatment request for the hospital system
+    public void addTreatmentRequest(int patientId, boolean isPriority){
+        if (!patientMap.containsKey(patientId)){
             System.out.println("Error: Patient ID " + patientId + " not found!");
             return;
+
+
         }
 
         TreatmentRequest request = new TreatmentRequest(patientId, System.currentTimeMillis(), isPriority);
         
-        if (isPriority) {
+        if (isPriority){
             urgentQueue.enqueue(request);
             System.out.println("URGENT request added for ID: " + patientId);
-        } else {
+        } else{
             normalQueue.enqueue(request);
             System.out.println("Normal request added for ID: " + patientId);
         }
     }
 
-    //Treatment process
-    public void processTreatment() {
+    //Treatment process method for project***
+    public void processTreatment(){
         TreatmentRequest requestToProcess = null;
 
-        // Prioritize urgent requests
-        if (urgentQueue.size() > 0) {
+        // ***priority to the urgent queue first***
+        if(urgentQueue.size() > 0){
             requestToProcess = urgentQueue.dequeue();
-        } else if (normalQueue.size() > 0) {
+        } else if(normalQueue.size() > 0){
             requestToProcess = normalQueue.dequeue();
         }
         
 
-        if (requestToProcess != null) {
+        if (requestToProcess != null){
             // Create and push discharge record
             DischargeRecord discharge = new DischargeRecord(requestToProcess.patientId, System.currentTimeMillis());
             dischargeStack.push(discharge);
             
             // Display processed treatment
             String name = patientMap.get(requestToProcess.patientId).name;
-            System.out.println("Processed Treatment for: " + name + " (ID: " + requestToProcess.patientId + ")");
-        } else {
-            System.out.println("No treatment requests waiting.");
+            System.out.println("Processed Treatment for: "+name +" (ID: "+requestToProcess.patientId +")");
+        } else{
+            System.out.println("***No treatment requests waiting***.");
         }
 
     }
@@ -74,23 +87,30 @@ public class HospitalSystem {
 
     // Print all patients
     public void printAllPatients(){
-        System.out.println("=== Patient List ===");
+        System.out.println("*** Patient List ***");
         
         // Sort patients by severity before printing
-        System.out.println("Sorting patients by severity...");
+        System.out.println("***Sorting patients by severity...");
         patientList.sortBySeverity();
         patientList.printList();
 
-        System.out.println("Waiting Treatment Queue (Urgent):");
-        System.out.print("URGENT Queue: "); urgentQueue.printQueue();
-        System.out.print("NORMAL Queue: "); normalQueue.printQueue();
+        System.out.println("***Waiting Treatment Queue (Urgent):");
+        System.out.print("***Urgent Queue: "); urgentQueue.printQueue();
+        System.out.print("***Normal Queue: "); normalQueue.printQueue();
 
-        System.out.println("Discharged Patients Stack:");
+        System.out.println("***Discharged Patients Stack:");
         dischargeStack.printStack();
-        System.out.println("=====================");
+        System.out.println("***====================****");
+        System.out.println("****");
+
+
+
+
 
 
     }
+
+
 
 
 }

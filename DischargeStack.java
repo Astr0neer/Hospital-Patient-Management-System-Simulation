@@ -59,7 +59,7 @@ public class DischargeStack {
     }
 
 
-    // Check if the stack is empty
+    // Check if the stack is empty or not
     public boolean isEmpty(){
       return top == null;
       

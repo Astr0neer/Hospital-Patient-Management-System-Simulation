@@ -3,11 +3,15 @@ public class PatientList {
     private Node head;
 
 
+
+
+    //again ınner node class for my linked list
+
     class Node {
         Patient patient;
         Node next;
         // Constructor
-        Node(Patient patient) {
+        Node(Patient patient){
             this.patient = patient;
             this.next = null;
         }
@@ -16,6 +20,7 @@ public class PatientList {
 
     public void addPatient(Patient p){
         Node newNode = new Node(p);
+
         if(head == null){
             head = newNode;
         } else {
@@ -32,7 +37,7 @@ public class PatientList {
             return null;
         }
         if(head.patient.id == id){
-            Patient removedPatient = head.patient; //Store the removed patient
+            Patient removedPatient = head.patient; //Storing the removed patient here
             head = head.next;
             return removedPatient;
         }
@@ -40,13 +45,13 @@ public class PatientList {
         while(current.next !=null){
             if(current.next.patient.id == id){
                 Patient removedPatient = current.next.patient;
-                current.next = current.next.next; // Bypass the removed node
+                current.next = current.next.next; // pass the removed node to the other one
                 return removedPatient;
             }
             current = current.next;
         }
 
-        return null; // Patient not found
+        return null; // if the patient isnt found
     }
 
     public Patient findPatient(int id){
@@ -60,7 +65,7 @@ public class PatientList {
         return null; // Patient not found
     }
 
-    public void printList() {
+    public void printList(){
     Node current = head;
 
     System.out.println("Patient List:");
@@ -73,7 +78,7 @@ public class PatientList {
 
 
 
-//Task 4
+//Task 4 bubble sorting 
 
 public void sortBySeverity(){
     if(head == null || head.next == null){
@@ -94,11 +99,13 @@ public void sortBySeverity(){
             }
             current = current.next;
         }
-    } while(swapped);   // Repeat until no swaps occur
+    } while(swapped);   // repeat this method until there  is no swaps
 
 }
 
     
+
+
 }
 
 

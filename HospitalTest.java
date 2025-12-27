@@ -1,14 +1,14 @@
 public class HospitalTest {
     public static void main(String[] args) {
-        System.out.println("Hospital System Testing:"); // Testing the final task
+        System.out.println("Hospital System Testing:"); // Testing the final task for my homework
         HospitalSystem hospital = new HospitalSystem();
 
         // Adding 10 patients
         System.out.println("Adding 10 patients to the system:");
-        hospital.addNewPatient(101, "Natalie Portmen", 3, 30);
+        hospital.addNewPatient(101, "Natalie Portmen", 3, 60);
         hospital.addNewPatient(102, "Chris Hemsworth", 8, 45); //Priorty
         hospital.addNewPatient(103, "Peter Parker", 2, 25);
-        hospital.addNewPatient(104, "Super Mario", 9, 70); // Critical
+        hospital.addNewPatient(104, "Super Mario", 9, 55); // Critical
         hospital.addNewPatient(105, "Aleyna Tilki", 4, 35);
         hospital.addNewPatient(106, "Timothe Tchalamet", 7, 28);
         hospital.addNewPatient(107, "Sponge Bob", 1, 33);
@@ -36,6 +36,8 @@ public class HospitalTest {
         hospital.dischargeStack.push(new DischargeRecord(999));
         System.out.println("Manual records added for ID 998 and 999.");
 
+        System.out.println();
+
         // Process 4 requests
         System.out.println("\nProcessing 4 treatment requests:");
         hospital.processTreatment();
@@ -45,7 +47,7 @@ public class HospitalTest {
 
 
 
-        // Step 5 Final Sytem State 
+        // Step 5 Final Sytem State at the end
         System.out.println("\n--- Final System State ---");
 
         hospital.printAllPatients();
